@@ -1,14 +1,20 @@
 public class AiCell extends Cell
 {
   public float d, s;
+  public Net net;
 
   public AiCell(float weight)
   {
     super(weight);
     d=random(TAU);
     s=random(1);
+    net = new Net();
   }
   void updaten() {
+    float[] arr = new float[10];
+    for(int i=0;i<arr.length;i++)
+      arr[i] = random(1);
+    println(net.update(arr));
     x += speed*s*cos(d);
     y += speed*s*sin(d);
     if (x >= 1 || x <= 0)
@@ -49,9 +55,11 @@ public class Net {
         layer[i] += input[i]*l0[i][j];
     }
     float[] out = new float[2];
-    for (int i=0; i<l0[0].length; i++) {
+    for (int i=0; i<l1[0].length; i++) {
       for (int j=0; j<l1[0].length; j++)
-        out[i] += layer[i]*l1[i][j];
+        out[i] +=
+        layer[i]*
+        l1[i][j];
     }
     return out;
   }
