@@ -7,9 +7,8 @@ void setup() {
   background(0);
   Cells.add(new ControlledCell(10));
 
-  for (int i = 0; i<1; i++)
-    Cells.add(new DumbCell(random(0.01, 1)));
-  Cells.add(new AiCell(10));
+  for (int i = 0; i<5; i++)
+    Cells.add(new DumbCell(random(0.01, 5)));
 }
 
 void draw() {
