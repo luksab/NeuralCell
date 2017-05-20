@@ -6,6 +6,7 @@ void setup() {
   scaling = (width+height);
   background(0);
   Cells.add(new ControlledCell(10));
+  Cells.add(new AiCell(10));
   for (int i = 0; i<1; i++)
     Cells.add(new DumbCell(random(0.01, 1)));
 }

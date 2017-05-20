@@ -11,7 +11,7 @@ abstract class Cell
   }
   void update() {
     a ++;
-    if (random(1) > 1000/a) {
+    if (random(1) > 5000/a) {
       lostWeight +=w;
       del = true;
     }
