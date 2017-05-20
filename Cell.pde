@@ -17,10 +17,18 @@ abstract class Cell
     //}
     lostWeight += w*0.002;
     w *= 0.998;
-    if (w < 0.5) {
+    if (w < 0.05) {
       del = true;
       lostWeight += w;
     }
+    if (x >= 1)
+      x = 0.99;
+    else if (x <= 0)
+      x = 0.01;
+    if (y >= 1)
+      y = 0.99;
+    if (y <= 0)
+      y = 0.01;
     updaten();
   }
   void updaten() {
