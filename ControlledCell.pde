@@ -35,16 +35,16 @@ public class ControlledCell extends Cell
         }
       }
     }
-      if (x >= 1)
-        x = 0.99;
-      else if (x <= 0)
-        x = 0.01;
-      if (y >= 1)
-        y = 0.99;
-      if (y <= 0)
-        y = 0.01;
-      x += dx;
-      y += dy;
+    if (x >= 1)
+      x = 0.99;
+    else if (x <= 0)
+      x = 0.01;
+    if (y >= 1)
+      y = 0.99;
+    if (y <= 0)
+      y = 0.01;
+    x += dx;
+    y += dy;
   }
   void draw() {
     fill(255, 255, 255);

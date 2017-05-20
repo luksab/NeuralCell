@@ -12,7 +12,7 @@ public class AiCell extends Cell
   }
   void updaten() {
     float[] arr = new float[10];
-    for(int i=0;i<arr.length;i++)
+    for (int i=0; i<arr.length; i++)
       arr[i] = random(1);
     println(net.update(arr));
     x += speed*s*cos(d);
@@ -58,8 +58,8 @@ public class Net {
     for (int i=0; i<l1[0].length; i++) {
       for (int j=0; j<l1[0].length; j++)
         out[i] +=
-        layer[i]*
-        l1[i][j];
+          layer[i]*
+          l1[i][j];
     }
     return out;
   }
