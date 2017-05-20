@@ -31,7 +31,7 @@ public class AiCell extends Cell
       d = TAU-d;
   }
   void draw() {
-    fill(204, 102, 0);
+    fill(30, 50, 240);
     noStroke();
     ellipse(x*width, y*height, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }

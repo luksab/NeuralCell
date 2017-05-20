@@ -29,12 +29,6 @@ public class ControlledCell extends Cell
         } else if (keyCode  == LEFT) {
           dx=-speed;
           dy=0;
-          int n = 200;
-          float[] nearCells = findNNearest(n);
-          for(int i = 0; i < n; i++)
-          {
-           println("w: "+ nearCells[3*i] + "  |  d: " + nearCells[3*i+1] + "  |  d: " + nearCells[3*i+2]); 
-          }
         } else if (keyCode  == RIGHT) {
           dx=speed;
           dy=0;
@@ -53,7 +47,7 @@ public class ControlledCell extends Cell
     y += dy;
   }
   void draw() {
-    fill(255, 255, 255);
+    fill(70, 200, 20);
     noStroke();
     ellipse(x*width, y*height, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }
