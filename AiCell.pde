@@ -11,10 +11,14 @@ public class AiCell extends Cell
     net = new Net();
   }
   void updaten() {
-    float[] arr = new float[10];
-    for (int i=0; i<arr.length; i++)
-      arr[i] = random(1);
-    println(net.update(arr));
+    float[] arr = findNNearest(1);
+    float[] array = new float[10];
+    for (int i=0; i<3; i++)
+      array[i] = arr[i];
+    array[9] = w;
+    //println(net.update(array));
+    arr = net.update(array);
+    d = arr[0];
     x += speed*s*cos(d);
     y += speed*s*sin(d);
     if (x >= 1 || x <= 0)

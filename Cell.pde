@@ -10,11 +10,11 @@ abstract class Cell
     y=random(1);
   }
   void update() {
-    a ++;
-    if (random(1) > 5000/a) {
-      lostWeight +=w;
-      del = true;
-    }
+    //a ++;
+    //if (random(1) > 5000/a) {
+    //  lostWeight +=w;
+    //  del = true;
+    //}
     lostWeight += w*0.002;
     w *= 0.998;
     if (w < 0.5) {
