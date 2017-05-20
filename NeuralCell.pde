@@ -14,7 +14,7 @@ void setup() {
 
 void draw() {
   background(0);
-  for (int k=0; k<1000; k++) {
+  for (int k=0; k<1; k++) {
     if (lostWeight > 5) {
       for (int i=0; i<lostWeight; i++)
         Cells.add(new AiCell(1));
@@ -23,7 +23,7 @@ void draw() {
     if (lostWeight > 1) {
       Cells.add(new AiCell(lostWeight));
       lostWeight = 0;
-      println(frameRate);
+     // println(frameRate);
     }
 
     for (int i=0; i<Cells.size(); i++) {

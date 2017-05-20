@@ -29,6 +29,12 @@ public class ControlledCell extends Cell
         } else if (keyCode  == LEFT) {
           dx=-speed;
           dy=0;
+          int n = 200;
+          float[] nearCells = findNNearest(n);
+          for(int i = 0; i < n; i++)
+          {
+           println("w: "+ nearCells[3*i] + "  |  d: " + nearCells[3*i+1] + "  |  d: " + nearCells[3*i+2]); 
+          }
         } else if (keyCode  == RIGHT) {
           dx=speed;
           dy=0;

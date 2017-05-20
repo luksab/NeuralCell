@@ -32,22 +32,32 @@ abstract class Cell
     Cell[] nearCells = new Cell[n];
     for (Cell c : Cells)
     {
-      for (int i = 0; i<n; i++)
+      if (c!=this)
       {
-        if (nearCells[i] == null || distance(c) < distance(nearCells[i]))
+        for (int i = 0; i<n; i++)
         {
-          Cell p = nearCells[i];
-          nearCells[i] = c;
-          for (int j = i + 1; j<n; j++)
+          if (nearCells[i] == null)
           {
-            if (distance(p) < distance(nearCells[j]))
+            nearCells[i] = c;
+          } else if (distance(c) < distance(nearCells[i]))
+          {
+            Cell p = nearCells[i];
+            nearCells[i] = c;
+            for (int j = i + 1; j<n; j++)
             {
-              Cell f = p;
-              p = nearCells[j];
-              nearCells[j] = f;
+              if (nearCells[j] == null)
+              {
+                break;
+              }
+              if (distance(p) < distance(nearCells[j]))
+              {
+                Cell f = p;
+                p = nearCells[j];
+                nearCells[j] = f;
+              }
             }
+            break;
           }
-          break;
         }
       }
     }
@@ -56,7 +66,7 @@ abstract class Cell
     {
       result[3*i] = nearCells[i].w;
       result[3*i+1] = atan((nearCells[i].y-y)/(nearCells[i].x-x));
-      if (nearCells[3*i].x<x)
+      if (nearCells[i].x<x)
       {
         result[3*i+1] += PI;
       }
@@ -64,14 +74,14 @@ abstract class Cell
       {
         result[3*i+1] += TAU;
       }
-      result[3*i+2] = (float)(Math.sqrt(Math.pow((nearCells[i].x - x), 2)+Math.pow((nearCells[i].y - y), 2)));
+      result[3*i+2] = (float)(distance(nearCells[i]));
     }
     return result;
   }
 
   double distance(Cell c)
   {
-    return(Math.sqrt(Math.pow((x-c.x), 2)+Math.pow((y-c.y), 2)));
+    return(Math.sqrt((Math.pow((x-c.x), 2))+(Math.pow((y-c.y), 2))));
   }
 
   boolean isColliding(Cell c) {
