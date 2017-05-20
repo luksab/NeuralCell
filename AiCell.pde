@@ -19,8 +19,8 @@ public class AiCell extends Cell
     //println(net.update(array));
     arr = net.update(array);
     d = arr[0];
-    x += speed*s*cos(d);
-    y += speed*s*sin(d);
+    x += speed*s*cos(d*TAU);
+    y += speed*s*sin(d*TAU);
     if (x >= 1 || x <= 0)
       if (d <= PI)
         d = PI - d;
