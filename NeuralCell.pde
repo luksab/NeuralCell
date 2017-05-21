@@ -30,10 +30,8 @@ void draw() {
         lostWeight --;
       }
     }
-    if (lostWeight > 2) {
-      {
-        Cells.add(new AiCell(lostWeight));
-      }
+    if (lostWeight > 2) {       
+      Cells.add(new AiCell(lostWeight));
       lostWeight = 0;
       // println(frameRate);
     }
