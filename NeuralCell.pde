@@ -10,10 +10,10 @@ void setup() {
   else screen = width;
   scaling = (2*screen);
   background(0);
-  Cells.add(new ControlledCell(5));
+  Cells.add(new ControlledCell(10));
   Cells.add(new AlgCell(5));
   float gesMass = 95;
-  for (int i = 0; i<10; i++) {
+  for (int i = 0; i<100; i++) {
     float cell = random(1, 10);
     Cells.add(new AiCell(gesMass/cell));
     gesMass = gesMass/cell;

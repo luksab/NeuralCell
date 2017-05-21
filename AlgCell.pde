@@ -138,7 +138,6 @@ public class AlgCell extends Cell
   }
   Cell split() {
     w = w/2;
-    println("A SPLIT!");
     return new AlgCell(w);
   }  
   void draw() {

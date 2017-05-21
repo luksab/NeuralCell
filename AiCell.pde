@@ -51,8 +51,6 @@ public class AiCell extends Cell
   Cell split() {
     w = w/2;
     
-    println("SPLIT!");
-
     float mutation = 0.1;
     float[][] l0 = new float[net.l0.length][net.l0[0].length];
     float[][] l1 = new float[net.l1.length][net.l1[0].length];
