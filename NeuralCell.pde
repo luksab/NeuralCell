@@ -75,7 +75,13 @@ void draw() {
   }
 }
 
-/*void mouseWheel(MouseEvent event) {
+void mouseWheel(MouseEvent event) {
+=======
+void mouseClicked() {
+  Cells.add(new ControlledCell(5));
+}
+/*
+void mouseWheel(MouseEvent event) {
   float e = -event.getCount();
   if (p >= 0) {
     p += e;
