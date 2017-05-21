@@ -23,6 +23,9 @@ void setup() {
 
 void draw() {
   background(0);
+  stroke(255);
+  line(screen, 0, screen, height);
+  line(0, screen, 0, height);
   for (int k=0; k<p; k++) {
     if (lostWeight > 5) {
       for (int i=0; i<lostWeight; i++) {

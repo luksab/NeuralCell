@@ -67,8 +67,8 @@ public class AiCell extends Cell
     return new AiCell(w, l0, l1,r+random(-1,1),g+random(-1,1),b+random(-1,1));
   }  
   void draw() {
+    stroke(127);
     fill(r, g, b);
-    noStroke();
     ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }
 }
