@@ -6,38 +6,34 @@ void setup() {
   size(750, 750);
   scaling = (width+height);
   background(0);
-  Cells.add(new ControlledCell(5));
-  Cells.add(new AlgCell(5));
+  Cells.add(new AlgCell(3));
 
   for (int i = 0; i<10; i++)
-    Cells.add(new DumbCell(random(0.01, 7)));
+    Cells.add(new AlgCell(random(0.01, 7)));
 }
 
 void draw() {
   background(0);
   for (int k=0; k<p; k++) {
     if (lostWeight > 5) {
-      for (int i=0; i<lostWeight; i++)
-        if(random(0, 2)<1)
-      {
-      Cells.add(new AlgCell(5));
-      }
-      else
-      {
-        Cells.add(new AiCell(3));
-      }
+      for (int i=0; i<lostWeight;i += 3)
+        if (random(0, 2)<3)
+        {
+          Cells.add(new AlgCell(3));
+        } else
+        {
+          Cells.add(new AiCell(3));
+        }
       lostWeight --;
     }
     if (lostWeight > 2) {
-      if(random(0, 2)<1)
+      if (random(0, 2)<3)
       {
-      Cells.add(new AlgCell(lostWeight));
-      }
-      else if(random(0, 2)<1)
+        Cells.add(new AlgCell(lostWeight));
+      } else if (random(0, 2)<1)
       {
-      Cells.add(new AiCell(lostWeight));
-      }
-      else
+        Cells.add(new AiCell(lostWeight));
+      } else
       {
         Cells.add(new DumbCell(lostWeight));
       }
