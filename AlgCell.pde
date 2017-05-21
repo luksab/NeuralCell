@@ -9,14 +9,15 @@ public class AlgCell extends Cell
     s=random(1);
   }
   void updaten() {
+    if(w > 10) split = true;
+    else split = false;
     float[] nearCell = findNNearest(1);
-    if(nearCell[0] < w)
+    if (nearCell[0] < w)
     {
-     d = nearCell[1]; 
-    }
-    else
+      d = nearCell[1];
+    } else
     {
-     d = ((nearCell[1] + PI) % TAU); 
+      d = ((nearCell[1] + PI) % TAU);
     }
     x += speed*s*cos(d);
     y += speed*s*sin(d);
@@ -29,9 +30,14 @@ public class AlgCell extends Cell
     if (y >= 1 || y <= 0)
       d = TAU-d;
   }
+  Cell split() {
+    w = w/2;
+    println("A SPLIT!");
+    return new AlgCell(w);
+  }  
   void draw() {
     fill(204, 200, 0);
     noStroke();
-    ellipse(x*width, y*height, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }
 }

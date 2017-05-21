@@ -1,6 +1,6 @@
 public class AiCell extends Cell
 {
-  public float d, s;
+  public float d, s, r,g,b;
   public Net net;
 
   public AiCell(float weight)
@@ -9,8 +9,11 @@ public class AiCell extends Cell
     d=random(TAU);
     s=random(1);
     net = new Net();
+    r = random(255);
+    g = random(255);
+    b = random(255);
   }
-  public AiCell(float weight, float[][] l0, float[][] l1)
+  public AiCell(float weight, float[][] l0, float[][] l1, float r,float g, float b)
   {
     super(weight);
     d=random(TAU);
@@ -32,7 +35,8 @@ public class AiCell extends Cell
       s = 1;
     else
       s = arr[1];
-    if (arr[2] > 0.5) split = true;
+    if (arr[2] > 0.5 && a > 120 && w > 3) split = true;
+    else split = false;
     x += speed*s*cos(d*TAU);
     y += speed*s*sin(d*TAU);
     if (x >= 1 || x <= 0)
@@ -46,18 +50,32 @@ public class AiCell extends Cell
   }
   Cell split() {
     w = w/2;
-    return new AiCell(w, net.l0, net.l1);
+    
+    println("SPLIT!");
+
+    float mutation = 0.1;
+    float[][] l0 = new float[net.l0.length][net.l0[0].length];
+    float[][] l1 = new float[net.l1.length][net.l1[0].length];
+    for (int i=0; i<l0.length; i++) {
+      for (int j=0; j<l0[0].length; j++)
+        l0[i][j] = net.l0[i][j] + random(-mutation, mutation);
+    }
+    for (int i=0; i<l1.length; i++) {
+      for (int j=0; j<l1[0].length; j++)
+        l1[i][j] = net.l1[i][j] + random(-mutation, mutation);
+    }
+    return new AiCell(w, l0, l1,r+random(-1,1),g+random(-1,1),b+random(-1,1));
   }  
   void draw() {
-    fill(30, 50, 240);
+    fill(r, g, b);
     noStroke();
-    ellipse(x*width, y*height, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }
 }
 
 public class Net {
   float[][] l0 = new float[10][10];
-  float[][] l1 = new float[10][3];
+  float[][] l1 = new float[l0[0].length][3];
   public Net() {
     for (int i=0; i<l0.length; i++) {
       for (int j=0; j<l0[0].length; j++)
@@ -69,14 +87,8 @@ public class Net {
     }
   }
   public Net(float[][] ol0, float[][] ol1) {
-    for (int i=0; i<l0.length; i++) {
-      for (int j=0; j<l0[0].length; j++)
-        l0[i][j] = ol0[i][j];
-    }
-    for (int i=0; i<l1.length; i++) {
-      for (int j=0; j<l1[0].length; j++)
-        l1[i][j] = ol1[i][j];
-    }
+    l0 = ol0;
+    l1 = ol1;
   }
   public float[] update(float[] input) {
     if (input.length != l0[0].length)

@@ -49,6 +49,6 @@ public class ControlledCell extends Cell
   void draw() {
     fill(70, 200, 20);
     noStroke();
-    ellipse(x*width, y*height, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
   }
 }

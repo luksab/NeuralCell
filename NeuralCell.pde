@@ -1,45 +1,38 @@
-float speed = 0.003, weightToRadius = 0.01, scaling, lostWeight=0;
-int p=1;
+float speed = 0.003, weightToRadius = 0.007, scaling, lostWeight=0;
+int p=1, screen;
 ArrayList<Cell> Cells = new ArrayList<Cell>();
 
 void setup() {
-  size(750, 750);
-  scaling = (width+height);
+  //size(750, 750);
+  fullScreen();
+  if (width>height)
+    screen = height;
+  else screen = width;
+  scaling = (2*screen);
   background(0);
   Cells.add(new ControlledCell(5));
   Cells.add(new AlgCell(5));
-
-  for (int i = 0; i<10; i++)
-    Cells.add(new DumbCell(random(0.01, 7)));
+  float gesMass = 95;
+  for (int i = 0; i<10; i++) {
+    float cell = random(1, 10);
+    Cells.add(new AiCell(gesMass/cell));
+    gesMass = gesMass/cell;
+  }
+  Cells.add(new AiCell(gesMass));
 }
 
 void draw() {
   background(0);
   for (int k=0; k<p; k++) {
     if (lostWeight > 5) {
-      for (int i=0; i<lostWeight; i++)
-        if(random(0, 2)<1)
-      {
-      Cells.add(new AlgCell(5));
+      for (int i=0; i<lostWeight; i++) {
+        Cells.add(new AiCell(0.8));
+        lostWeight --;
       }
-      else
-      {
-        Cells.add(new AiCell(3));
-      }
-      lostWeight --;
     }
     if (lostWeight > 2) {
-      if(random(0, 2)<1)
       {
-      Cells.add(new AlgCell(lostWeight));
-      }
-      else if(random(0, 2)<1)
-      {
-      Cells.add(new AiCell(lostWeight));
-      }
-      else
-      {
-        Cells.add(new DumbCell(lostWeight));
+        Cells.add(new AiCell(lostWeight));
       }
       lostWeight = 0;
       // println(frameRate);
