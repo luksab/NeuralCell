@@ -1,13 +1,18 @@
 float speed = 0.003, weightToRadius = 0.007, scaling, lostWeight=0;
 int p=1, screen;
 ArrayList<Cell> Cells = new ArrayList<Cell>();
+boolean wide;
 
 void setup() {
   //size(750, 750);
   fullScreen();
-  if (width>height)
+  if (width>height) {
     screen = height;
-  else screen = width;
+    wide = true;
+  } else { 
+    screen = width;
+    wide = false;
+  }
   scaling = (2*screen);
   background(0);
   Cells.add(new ControlledCell(10));
@@ -75,8 +80,11 @@ void draw() {
   }
 }
 
-void mouseClicked() {
-  Cells.add(new ControlledCell(5));
+void mouseReleased() {
+  if (wide && mouseX > screen)
+    Cells.add(new ControlledCell(5));
+  else if (!wide && mouseY > screen)
+    Cells.add(new ControlledCell(5));
 }
 
 void mouseWheel(MouseEvent event) {
