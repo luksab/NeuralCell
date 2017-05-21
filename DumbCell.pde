@@ -23,6 +23,6 @@ public class DumbCell extends Cell
   void draw() {
     fill(204, 102, 0);
     noStroke();
-    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, (float)Math.sqrt(w)*weightToRadius*scaling, (float)Math.sqrt(w)*weightToRadius*scaling);
   }
 }

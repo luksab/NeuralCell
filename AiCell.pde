@@ -67,7 +67,7 @@ public class AiCell extends Cell
   void draw() {
     stroke(127);
     fill(r, g, b);
-    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, (float)Math.sqrt(w)*weightToRadius*scaling, (float)Math.sqrt(w)*weightToRadius*scaling);
   }
 }
 

@@ -80,6 +80,6 @@ public class ControlledCell extends Cell
   void draw() {
     fill(70, 200, 20);
     stroke(255);
-    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, (float)Math.sqrt(w)*weightToRadius*scaling, (float)Math.sqrt(w)*weightToRadius*scaling);
   }
 }

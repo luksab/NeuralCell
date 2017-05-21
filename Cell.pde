@@ -100,6 +100,6 @@ abstract class Cell
 
   boolean isColliding(Cell c) {
     if (c == this) return false;
-    return(Math.pow((c.x - x), 2)+Math.pow((c.y - y), 2)<=Math.pow(((c.w + w)*weightToRadius), 2));
+    return(Math.pow((c.x - x), 2)+Math.pow((c.y - y), 2)<=Math.pow((((float)Math.sqrt(c.w) + (float)Math.sqrt(w))*weightToRadius), 2));
   }
 }
