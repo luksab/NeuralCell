@@ -82,9 +82,15 @@ void draw() {
 
 void mouseReleased() {
   if (wide && mouseX > screen)
+  {
     Cells.add(new ControlledCell(5));
+    lostWeight -=5;
+  }
   else if (!wide && mouseY > screen)
+  {
     Cells.add(new ControlledCell(5));
+    lostWeight -=5;
+  }
 }
 
 void mouseWheel(MouseEvent event) {
