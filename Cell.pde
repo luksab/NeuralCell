@@ -1,6 +1,6 @@
 abstract class Cell
 {
-  public float w, x, y, a;
+  public float w, x, y, a, l;
   public boolean del, split = false;
 
   public Cell(float weight)
@@ -8,6 +8,7 @@ abstract class Cell
     w = weight;
     x=random(1);
     y=random(1);
+    l = 0.001;
   }
   void update() {
     a ++;
@@ -15,8 +16,8 @@ abstract class Cell
       lostWeight +=w;
       del = true;
     }
-    lostWeight += w*0.002;
-    w *= 0.998;
+    lostWeight += w*l;
+    w *= (1-l);
     if (w < 0.05) {
       del = true;
       lostWeight += w;

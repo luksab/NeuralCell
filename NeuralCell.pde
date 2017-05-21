@@ -81,15 +81,29 @@ void draw() {
 }
 
 void mouseReleased() {
-  if (wide && mouseX > screen)
+  if (mouseButton == LEFT)
   {
-    Cells.add(new ControlledCell(5));
-    lostWeight -=5;
+    if (wide && mouseX > screen)
+    {
+      Cells.add(new ControlledCell(5));
+      lostWeight -=5;
+    } else if (!wide && mouseY > screen)
+    {
+      Cells.add(new ControlledCell(5));
+      lostWeight -=5;
+    }
   }
-  else if (!wide && mouseY > screen)
+  else if(mouseButton == RIGHT)
   {
-    Cells.add(new ControlledCell(5));
-    lostWeight -=5;
+    if (wide && mouseX > screen)
+    {
+      Cells.add(new AlgCell(3));
+      lostWeight -=3;
+    } else if (!wide && mouseY > screen)
+    {
+      Cells.add(new AlgCell(3));
+      lostWeight -=3;
+    }
   }
 }
 
