@@ -75,7 +75,7 @@ void draw() {
   }
 }
 
-void mouseWheel(MouseEvent event) {
+/*void mouseWheel(MouseEvent event) {
   float e = -event.getCount();
   if (p >= 0) {
     p += e;
@@ -87,4 +87,4 @@ void mouseWheel(MouseEvent event) {
       p += 1000*e;
   } else
     p=0;
-}
+}*/
