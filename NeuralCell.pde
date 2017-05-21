@@ -75,8 +75,6 @@ void draw() {
   }
 }
 
-void mouseWheel(MouseEvent event) {
-=======
 void mouseClicked() {
   Cells.add(new ControlledCell(5));
 }
