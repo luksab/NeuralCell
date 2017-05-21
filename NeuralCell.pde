@@ -51,6 +51,12 @@ void draw() {
       if (d.del)
         Cells.remove(d);
     }
+    for (int i=0; i<Cells.size(); i++) {
+      Cell d = Cells.get(i);
+      d.update();
+      if (d.split)
+        Cells.add(d.split());
+    }
 
     for (int i=0; i<Cells.size(); i++)
       for (int j=i+1; j<Cells.size(); j++) {

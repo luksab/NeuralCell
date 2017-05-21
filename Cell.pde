@@ -1,7 +1,7 @@
 abstract class Cell
 {
   public float w, x, y, a;
-  public boolean del;
+  public boolean del, split = false;
 
   public Cell(float weight)
   {
@@ -30,6 +30,9 @@ abstract class Cell
     if (y <= 0)
       y = 0.01;
     updaten();
+  }
+  Cell split(){
+    return new DumbCell(0);
   }
   void updaten() {
   }
