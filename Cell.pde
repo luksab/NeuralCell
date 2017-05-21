@@ -72,6 +72,8 @@ abstract class Cell
     float[] result = new float[3*n];
     for (int i = 0; i<n; i++)
     {
+      if(nearCells[i] != null)
+      {
       result[3*i] = nearCells[i].w;
       result[3*i+1] = atan((nearCells[i].y-y)/(nearCells[i].x-x));
       if (nearCells[i].x<x)
@@ -84,6 +86,7 @@ abstract class Cell
       }
       result[3*i+2] = (float)(distance(nearCells[i]));
     }
+  }
     return result;
   }
 
