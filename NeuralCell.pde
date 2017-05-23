@@ -81,42 +81,27 @@ void draw() {
 }
 
 void mouseReleased() {
-  if (mouseButton == LEFT)
+  if (wide && mouseX > screen)
   {
-    if (wide && mouseX > screen)
-    {
-      Cells.add(new ControlledCell(5));
-      lostWeight -=5;
-    } else if (!wide && mouseY > screen)
-    {
-      Cells.add(new ControlledCell(5));
-      lostWeight -=5;
-    }
-  }
-  else if(mouseButton == RIGHT)
+    Cells.add(new ControlledCell(5));
+    lostWeight -=5;
+  } else if (!wide && mouseY > screen)
   {
-    if (wide && mouseX > screen)
-    {
-      Cells.add(new AlgCell(3));
-      lostWeight -=3;
-    } else if (!wide && mouseY > screen)
-    {
-      Cells.add(new AlgCell(3));
-      lostWeight -=3;
-    }
+    Cells.add(new ControlledCell(5));
+    lostWeight -=5;
   }
 }
 /*
 void mouseWheel(MouseEvent event) {
-  float e = -event.getCount();
-  if (p >= 0) {
-    p += e;
-    if (p > 5)
-      p += 10*e;
-    if (p > 100)
-      p += 100*e;
-    if (p > 1000)
-      p += 1000*e;
-  } else
-    p=0;
-}*/
+ float e = -event.getCount();
+ if (p >= 0) {
+ p += e;
+ if (p > 5)
+ p += 10*e;
+ if (p > 100)
+ p += 100*e;
+ if (p > 1000)
+ p += 1000*e;
+ } else
+ p=0;
+ }*/
