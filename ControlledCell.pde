@@ -23,7 +23,6 @@ public class ControlledCell extends Cell
       s = (float)(Math.sqrt((Math.pow((x-(float)(mouseX)/screen), 2))+(Math.pow((y-(float)(mouseY)/screen), 2))))*5;
       if(s > 1)
         s = 1;
-    println(s);
     x += speed*s*cos(d);
     y += speed*s*sin(d);
     if (x >= 1 || x <= 0)
@@ -80,6 +79,6 @@ public class ControlledCell extends Cell
   void draw() {
     fill(70, 200, 20);
     stroke(255);
-    ellipse(x*screen, y*screen, w*weightToRadius*scaling, w*weightToRadius*scaling);
+    ellipse(x*screen, y*screen, (float)Math.sqrt(w)*weightToRadius*scaling, (float)Math.sqrt(w)*weightToRadius*scaling);
   }
 }
