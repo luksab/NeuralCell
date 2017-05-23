@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="60mm"
+   height="60mm"
+   viewBox="0 0 60 60"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="C:\Users\lukas\Documents\GitHub\NeuralCell\icon-192.png"
+   inkscape:export-xdpi="81.279999"
+   inkscape:export-ydpi="81.279999"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="Image.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="117.49324"
+     inkscape:cy="112.54504"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-237)">
+    <rect
+       style="fill:#020000;fill-opacity:1;stroke-width:0.26458332"
+       id="rect4503"
+       width="82.185379"
+       height="72.563675"
+       x="-4.8108511"
+       y="232.98895"
+       inkscape:export-filename="C:\Users\lukas\Documents\GitHub\NeuralCell\icon-512.png"
+       inkscape:export-xdpi="216.75"
+       inkscape:export-ydpi="216.75" />
+    <circle
+       id="path3690"
+       cx="15.56845"
+       cy="252.29916"
+       r="7.0158248"
+       style="stroke-width:0.26458332;fill:#268bc5;fill-opacity:1" />
+    <circle
+       id="path3692"
+       cx="44.767643"
+       cy="284.7056"
+       r="15.635267"
+       style="stroke-width:0.26458332;fill:#46c814;fill-opacity:1" />
+    <circle
+       id="path3694"
+       cx="36.682739"
+       cy="255.9073"
+       r="6.3476515"
+       style="stroke-width:0.26458332;fill:#ccc800;fill-opacity:1" />
+    <circle
+       id="path3696"
+       cx="17.172066"
+       cy="273.14618"
+       r="4.07586"
+       style="stroke-width:0.26458332;fill:#cc6600;fill-opacity:1" />
+  </g>
+</svg>
